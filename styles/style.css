@@ -1256,16 +1256,24 @@ header nav .cont #sidebar__nav ul a.active::after {
   place-items: center;
   gap: 0 2rem;
 }
-#junt2 #conteudo .container .videos .lazyframe {
+#junt2 #conteudo .container .videos #lazyframe {
   width: 100%;
   height: 200px;
   display: grid;
   place-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
-#junt2 #conteudo .container .videos .lazyframe span {
+#junt2 #conteudo .container .videos #lazyframe.filter {
+  filter: grayscale(1);
+}
+#junt2 #conteudo .container .videos #lazyframe.filter:hover {
+  filter: grayscale(0);
+}
+#junt2 #conteudo .container .videos #lazyframe span {
   display: none;
 }
-#junt2 #conteudo .container .videos .lazyframe iframe {
+#junt2 #conteudo .container .videos #lazyframe iframe {
   width: 100%;
   height: 100%;
 }

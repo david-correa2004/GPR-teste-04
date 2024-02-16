@@ -6,6 +6,15 @@ const whatsflut = document.querySelector(".btn-flut");
 const a_nav = document.querySelectorAll("#a_nav");
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelector('.a_nav2');
+const lazyframe = document.querySelectorAll('#lazyframe');
+
+lazyframe.forEach(video => {
+    video.classList.add("filter")
+    video.onclick = () => {
+        video.classList.remove("filter")
+    }
+})
+
 window.onscroll = () => {
     if (window.scrollY > 0) {
         nav.dataset.active = "true"
@@ -211,11 +220,4 @@ var swiper1 = new Swiper(".mySwiper4", {
             spaceBetween: 10,
         }
     }
-});
-const express = require('express');
-const app = express();
-
-app.use((req, res, next) => {
-  res.header('Cache-Control', 'max-age=31536000');
-  next();
 });
