@@ -1,0 +1,235 @@
+header {
+    background: transparent;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    transition: all 0.5s ease-in;
+    &[data-active="true"] {
+        height: 15%;
+        background: $color1;
+    }
+
+    nav {
+        transition: all 0.3s ease-in;
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .cont {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .logo {
+                width: 30%;
+                svg {
+                    height: fit-content;
+                    width: 60px;
+                }
+            }
+            #menu__btn {
+                display: none;
+            }
+            #sidebar__nav {
+                width: 70%;
+                display: grid;
+                place-items: center end;
+                ul {
+                    width: 70%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    /* Não mexer */
+                    .a2 {
+                        display: none;
+                    }
+                    /* Não mexer ^^ */
+                    .li {
+                        position: relative;
+                        display: grid;
+                        place-items: center;
+                        a {
+                            width: 100%;
+                            p {
+                                font-size: 14px;
+                                color: transparent;
+                            }
+                        }
+                        .a_nav2 {
+                            position: absolute;
+                            visibility: visible;
+                            &::after{
+                                display: none;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: $color3;
+                        font-size: 14px;
+                        transition: all 0.5s ease;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        padding: 0 0 5%;
+                        align-items: center;
+                        &::after {
+                            content: ("");
+                            position: absolute;
+                            display: block;
+                            width: 0%;
+                            height: 1px;
+                            bottom: 0;
+                            background: $color7;
+                            transition: all 0.5s ease;
+                        }
+                        &:hover {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                        &.active {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 800px) {
+    header {
+        height: 15%;
+        &[data-active="true"] {
+            height: 10%;
+        }
+        nav {
+            .cont {
+                #menu__btn {
+                    position: fixed;
+                    right: 8%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3rem 0;
+                    z-index: 10;
+                    cursor: pointer;
+                    transition: all 0.5s ease-out;
+                    .boll {
+                        width: 25px;
+                        height: 3px;
+                        background: $color3;
+                        border-radius: 50px;
+                        transition: all 0.5s ease-out;
+                        &:nth-child(2) {
+                            width: 15px;
+                        }
+                    }
+                    &:hover {
+                        .boll {
+                            background: $color2;
+                        }
+                    }
+                    &[data-active="true"] {
+                        right: 55%;
+                        .boll {
+                            transition: all 0.8s ease-out;
+
+                            position: absolute;
+                            &:nth-child(1) {
+                                transform: rotateZ(45deg);
+                            }
+                            &:nth-child(3) {
+                                top: 5%;
+                                transform: rotateZ(-45deg);
+                            }
+                            &:nth-child(2) {
+                                opacity: 0;
+                                visibility: hidden;
+                            }
+                        }
+                    }
+                }
+                #sidebar__nav {
+                    position: fixed;
+                    width: 100%;
+                    inset: 0;
+                    right: 0;
+                    z-index: 9;
+                    background: rgba(#000, 50%);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.5s ease-out;
+                    &[data-active="true"] {
+                        visibility: visible;
+                        opacity: 1;
+
+                        ul {
+                            right: 0;
+                            transition: all 0.3s ease-out;
+                            transition-delay: 0.5s;
+                        }
+                    }
+                    ul {
+                        position: absolute;
+                        width: 60%;
+                        right: -80%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        list-style: none;
+                        gap: 2.5rem 0;
+                        top: 0;
+                        background: $color1;
+                        transition: all 0.2s ease;
+                        .li {
+                            a {
+                                p {
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                        li {
+                            a {
+                                display: block;
+                                width: 100%;
+                                text-align: start;
+                                font-size: 1.2rem;
+                                color: $color3;
+                                position: relative;
+                                &::after {
+                                    content: ("");
+                                    position: absolute;
+                                    display: grid;
+                                    width: 0;
+                                    height: 1px;
+                                    background: $color3;
+                                    transition: all 0.5s ease;
+                                }
+                                &:hover {
+                                    &::after {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

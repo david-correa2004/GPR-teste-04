@@ -1,0 +1,144 @@
+#sobre{
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: ('');
+        position: absolute;
+        display: block;
+        width: 30%;
+        height: 100%;
+        border-radius: 0 50% 50% 0;
+        background: transparent radial-gradient(closest-side at 50% 50%, #006E98 0%, #006E9800 100%) 0% 0% no-repeat padding-box;
+        left: -16%;
+        z-index: -1;
+    }
+    &::before{
+        content: ('');
+        position: absolute;
+        display: block;
+        width: 30%;
+        height: 100%;
+        border-radius: 0 50% 50% 0;
+        background: transparent radial-gradient(closest-side at 50% 50%, #006E98 0%, #006E9800 100%) 0% 0% no-repeat padding-box;
+        right: -16%;
+        z-index: -1;
+    }
+    .container{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        place-items: center;
+        .text{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem 0;
+            .title{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                gap: .5rem 0;
+                p{
+                    width: fit-content;
+                    padding: 5px 15px;
+                    border-radius: 18px;
+                    color: #008DFF;
+                    background: #fff;
+                }
+            }
+            p{
+                font-size: 14px;
+                opacity: .8;
+            }
+        }
+        #car{
+            width: 30vw;
+            display: grid;
+            place-items: center;
+            gap: 1rem 0;
+            border-radius: 10px;
+            .seta{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 2;
+                .swiper-button-prev-img, .swiper-button-next-img{
+                    height: 100%;
+                    width: 20px;
+                    display: grid;
+                    place-items: center;
+                    background: #1b1b1b;
+                    border-radius: 7px;
+                    cursor: pointer;
+                    svg{
+                        width: 80%;
+                        height: auto;
+                        transform: rotateZ(90deg);
+                        pointer-events: none;
+                    }
+                }
+                .swiper-button-prev-img{
+                    transform: rotateZ(180deg);
+                }
+            }
+            .mySwiper-img2{
+                position: relative;
+            }
+            .swiper{
+                width: 100%;
+                position: relative;
+                border-radius: 10px;
+                &::after{
+                    content: ('');
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: transparent;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                }
+                .swiper-wrapper{
+                    border-radius: 10px;
+                    .swiper-slide{
+                        display: grid;
+                        place-items: center;
+                        img{
+                            width: 100%;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width: 800px){
+    #sobre{
+        padding: 10% 0 20%;
+        &::after{
+            display: none;
+        }
+        &::before{
+            display: none;
+        }
+        .container{
+            width: 80%;
+            grid-template-columns: repeat(1,1fr);
+            gap: 3rem 0;
+            #car{
+                width: 80vw;
+            }
+        }
+    }
+}

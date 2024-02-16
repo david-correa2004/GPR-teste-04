@@ -1,0 +1,163 @@
+#services {
+    padding: 0 0 5%;
+    .container {
+        display: grid;
+        place-items: center;
+        width: 100%;
+        background: $color2;
+        gap: 2rem 0;
+        padding: 0 0 5%;
+        border-radius: 0 0 37px 37px;
+        .text {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 1rem 0;
+            .title {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 0.5rem 0;
+                p {
+                    width: fit-content;
+                    padding: 5px 15px;
+                    border-radius: 18px;
+                    color: $color1;
+                    background: $color7;
+                }
+            }
+            p {
+                font-size: 18px;
+            }
+        }
+        .conts {
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-items: center;
+            gap: 2rem;
+            .cont {
+                width: 100%;
+                height: 100%;
+                padding: 10% 0;
+                border: 1px solid $color3;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem 0;
+                border-radius: 0 0 13px 13px;
+                transition: all 0.5s ease;
+                position: relative;
+                &::after {
+                    content: ("");
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 0;
+                    background: $color7;
+                    top: 0;
+                    transition: all 0.5s ease;
+                }
+                &::before {
+                    content: ("");
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 0;
+                    background: $color3;
+                    top: 0;
+                    transition: all 0.5s ease;
+                    border-radius: 0 0 13px 13px;
+                }
+                h3 {
+                    width: 80%;
+                    font-size: 20px;
+                    color: $color3;
+                    transition: all 0.5s ease;
+                }
+                p {
+                    width: 80%;
+                    color: $color3;
+                    font-size: 14px;
+                    transition: all 0.5s ease;
+                }
+                @keyframes animate {
+                    0% {
+                        opacity: 1;
+                        color: $color3;
+                    }
+                    10% {
+                        opacity: 0;
+                    }
+                    50% {
+                        opacity: 0.5;
+                    }
+                    100% {
+                        opacity: 0.9;
+                        color: $color1;
+                    }
+                }
+                &:hover {
+                    border: 1px solid transparent;
+                    &::after {
+                        height: 5%;
+                    }
+                    &::before {
+                        height: 100%;
+                    }
+                    p,
+                    h3 {
+                        color: $color1;
+                        z-index: 2;
+                        animation: 1.5s animate;
+                    }
+                    p {
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 800px) {
+    #services {
+        .container {
+            gap: 3rem 0;
+            padding: 5% 0 15%;
+            .text {
+                width: 80%;
+            }
+            .conts {
+                grid-template-columns: repeat(1, 1fr);
+                .cont {
+                    border: 1px solid transparent;
+                    padding: 15% 0;
+                    &::after {
+                        height: 5%;
+                    }
+                    &::before {
+                        height: 100%;
+                    }
+                    h3,
+                    p {
+                        color: $color1;
+                        z-index: 2;
+                    }
+                    &:hover {
+                        p,
+                        h3 {
+                            animation: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

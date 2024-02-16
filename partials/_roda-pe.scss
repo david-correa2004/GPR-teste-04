@@ -1,0 +1,23 @@
+footer {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background: $color2;
+    padding: 3% 0 1%;
+    .container {
+        display: grid;
+        place-items: center;
+        gap: 1.5rem 0;
+        height: fit-content;
+        span{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: $color3;
+        }
+    }
+}

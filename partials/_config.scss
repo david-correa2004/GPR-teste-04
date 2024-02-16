@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    object-fit: cover;
+    font-family: "Poppins", sans-serif;
+}
+@font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    src: url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap")
+        format("woff2");
+    font-display: swap;
+}
+html {
+    scroll-behavior: smooth;
+}
+section {
+    display: grid;
+    place-items: center;
+    height: fit-content;
+    padding: 5% 0;
+    margin-top: -1px;
+}
+body {
+    background: #07070b;
+}
+.container {
+    width: 80%;
+}
+a {
+    width: fit-content;
+}
+button {
+    background: #008dff;
+    font-size: 14px;
+    width: 200px;
+    height: 50px;
+    border-radius: 13px;
+    border: none;
+    transition: all 0.75s ease;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+        transform: scale(0.95);
+        box-shadow: 0px 3px 6px #0000000d;
+    }
+}
+h1 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+::-webkit-scrollbar {
+    background-color: #07070b;
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #008dff;
+    border-radius: 10px;
+}
+@media (max-width: 800px) {
+    section {
+        padding: 10% 0;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+$color1: #07070b;
+$color2: #008dff;
+$color3: #fff;
+$color4: #2f2f2e;
+$color5: #197ad8;
+$color6: #c7c7c7;
+$color7: #00f280;
+$color8: #f2f2f2;
